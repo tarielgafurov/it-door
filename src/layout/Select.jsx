@@ -1,40 +1,37 @@
-
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { useState } from 'react';
+import MenuItem from '@mui/material/MenuItem';
 import styled from 'styled-components';
 
-export default function BasicSelect() {
-  const [age, setAge] = React.useState('');
+const SelectUi = (props) =>{
+  const [selectedLanguage, setSelectedLanguage] = useState('')
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+  const handleChange = (e) =>{
+    setSelectedLanguage(e.target.value)
+  }
 
-  return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <SelectStyled
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          onChange={handleChange}
-        >
-          <MenuItem value="Kyrgyz">Kyrgyz</MenuItem>
-          <MenuItem value="Russia">Russia</MenuItem>
-          <MenuItem value="English">English</MenuItem>
-        </SelectStyled>
-      </FormControl>
-    </Box>
-  );
+  return(
+    <>
+      <SelectStyled value={selectedLanguage || ``} onChange={handleChange}>
+              <MenuItem value={props.value || `Kyrgyz`}>Kyrgyz</MenuItem>
+              <MenuItem value={props.value || `Russia`}>Russia</MenuItem>
+              <MenuItem value={props.value || `English`}>English</MenuItem>
+    </SelectStyled>
+
+    </>
+  )
 }
+
+export default SelectUi
 
 
 const SelectStyled = styled(Select)`
-    border: 2px solid white;
-    background-color: white;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 `
+
 
 
