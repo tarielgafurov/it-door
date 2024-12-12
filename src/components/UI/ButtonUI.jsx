@@ -19,7 +19,6 @@ const ButtonStyled = styled(Button)`
   color: white;               
   border: none;
   border-radius: 4px;
-  margin-top: 30px;
   
  
   padding: ${(props) => props.padding || '10px 45px'};
