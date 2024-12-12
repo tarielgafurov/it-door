@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style>
 
 const DivContainer = ({ texts }) => {
   const half = Math.ceil(texts.length / 2);
@@ -44,7 +47,6 @@ const DivContainer = ({ texts }) => {
 export default DivContainer;
 
 const ParentContainerStyled = styled.div`
-  border: 2px solid;
   width: 1116px;
   height: auto;
   margin: auto;
@@ -59,28 +61,27 @@ const ParentContainerStyled = styled.div`
 `;
 
 const TopContainerStyled = styled.div`
-  border: 2px solid;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 `;
 
 const BottomContainerStyled = styled.div`
-  border: 2px solid;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 `;
 
 const AnimatedDiv = styled(motion.div)`
+  border-radius: 16px;
   border: none;
   width: 345px;
   height: 169px;
-  border-radius: 7px;
+  border-radius: 16 px;
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: rgba(5, 32, 92, 0.509);
+  background-color: rgba(57, 144, 249, 0.135) ;
   > h3 {
     color: white;
     margin-left: -235px;
@@ -92,7 +93,7 @@ const NumberStyled = styled.div`
   bottom: 0;
   right: 0;
   font-size: 72px;
-  color: rgba(33, 57, 113, 0.394);
+  color: rgba(57, 144, 249, 0.135);
   font-weight: bold;
   z-index: 1;
 `;
@@ -110,4 +111,7 @@ const TextContainerStyled = styled.div`
   white-space: normal;
   z-index: 2;
   overflow: auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 `;
