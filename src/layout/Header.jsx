@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import itdoor from "..//assets/icons/it-door.png"
 import ButtonUI from "../components/UI/Button"
-import BasicSelect from "./Select"
+import SelectUi from "./Select"
 
 
 const Header = () =>{
@@ -15,12 +15,14 @@ const Header = () =>{
             <span>Контакты</span>
             </ImgStyled>
             <ButtonUI>Войти</ButtonUI>
-            <BasicSelect>asa</BasicSelect>
+            <SelectUi/>
         </HeaderStyled>
     )
 }
 
 export default Header
+
+
 
 const HeaderStyled = styled.header`
     width: 1440px;
