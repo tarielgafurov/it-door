@@ -62,8 +62,8 @@ const Carousel = () => {
       ref={containerRef}>
 
         <ButtonContainer>
-            <button onClick={handlePrev} ><img src={StrelkaOne} alt="" /></button>
-            <button onClick={handleNext} ><img src={StrelkaTwo} alt="" /></button>
+            <button onClick={handleNext} ><img src={StrelkaOne} alt="" /></button>
+            <button onClick={handlePrev} ><img src={StrelkaTwo} alt="" /></button>
         </ButtonContainer>
 
       <CarouselContainer>
