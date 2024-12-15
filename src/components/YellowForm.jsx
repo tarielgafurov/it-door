@@ -23,7 +23,6 @@ export default YellowForm
 
 
 const UpLes = styled.div`
-    /* border: 1px solid white; */
     width: 298.75px;
     height: 112px;
     margin-top: 50px;
