@@ -9,7 +9,7 @@ const Father = () => {
       <Mentora>
         <h1>Наши ментора</h1>
       </Mentora>
-        <Carousel/>
+      <Carousel/>
     </Container>
     </>
   )

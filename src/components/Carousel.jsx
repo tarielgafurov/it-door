@@ -8,10 +8,10 @@ import StrelkaTwo from '../assets/images/Arrow 3 (1).png'
 const CarouselContainer = styled.div`
   display: flex;
   overflow: hidden;
-  width: 84%;
+  width: 97%;
   position: relative;
   position: absolute;
-  margin-left: -621px;
+  left: 20px;
   margin-top: -130px;
 `;
 
