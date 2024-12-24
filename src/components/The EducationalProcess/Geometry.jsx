@@ -48,6 +48,6 @@ const Div = styled.div`
     width: 1041.67px;
     height: 236px;
     position: absolute;
-    margin-top: -420px;
+    margin-top: -350px;
     margin-left: -518px;
 `
