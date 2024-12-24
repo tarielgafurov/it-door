@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Line from '../assets/images/image.png'
+import Line from '../The EducationalProcess/images/image.png'
 
 const BlueForm = () => {
   return (

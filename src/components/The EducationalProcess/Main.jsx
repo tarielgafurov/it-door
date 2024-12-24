@@ -23,9 +23,6 @@ const Daven = styled.div`
     width: 1041.67px;
     height: 404px;
     background-color: #000000;
-    border-radius: 30px;
-    margin-top: 150px;
-    margin-left: 300px;
 `
 
 const Driv = styled.div`
