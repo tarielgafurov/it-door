@@ -1,117 +1,158 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-</style>
 
-const DivContainer = ({ texts }) => {
-  const half = Math.ceil(texts.length / 2);
-  const firstHalf = texts.slice(0, half);
-  const secondHalf = texts.slice(half);
-
-  const animationVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
+const DivContainer = () => {
+  const data = [
+    { id: 1, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
+    { id: 2, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
+    { id: 3, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
+    { id: 4, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
+    { id: 5, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
+    { id: 6, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
+  ];
 
   return (
-    <ParentContainerStyled>
-      <h2>Как проходит обучение</h2>
-      <TopContainerStyled>
-        {firstHalf.map((text, index) => (
-          <AnimatedDiv key={index} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={animationVariants}>
-            <NumberStyled>{index + 1}</NumberStyled>
-            <h3>Занятия</h3>
-            <TextContainerStyled>
-              <span>{text}</span>
-            </TextContainerStyled>
-          </AnimatedDiv>
+    <Wrapper>
+      <Title>Как проходит обучение</Title>
+      <DivContainerWrapper>
+        {data.map(({ id, title, description }) => (
+          <Card key={id}>
+            <h1>{title}</h1>
+            <p>{description}</p>
+            <div>{id}</div>
+          </Card>
         ))}
-      </TopContainerStyled>
-      <BottomContainerStyled>
-        {secondHalf.map((text, index) => (
-          <AnimatedDiv key={index + half} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={animationVariants}>
-            <NumberStyled>{index + half + 1}</NumberStyled>
-            <h3>Занятия</h3>
-            <TextContainerStyled>
-              <span>{text}</span>
-            </TextContainerStyled>
-          </AnimatedDiv>
-        ))}
-      </BottomContainerStyled>
-    </ParentContainerStyled>
+      </DivContainerWrapper>
+    </Wrapper>
   );
 };
 
-export default DivContainer;
-
-const ParentContainerStyled = styled.div`
+const Wrapper = styled.div`
   width: 1116px;
-  height: auto;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  > h2 {
-    color: white;
-    display: flex;
-    align-items: flex-start;
+
+  @media (max-width: 834px) {
+    width: 90%;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    padding: 0 10px;
   }
 `;
 
-const TopContainerStyled = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-`;
-
-const BottomContainerStyled = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-`;
-
-const AnimatedDiv = styled(motion.div)`
-  border-radius: 16px;
-  border: none;
-  width: 345px;
-  height: 169px;
-  border-radius: 16 px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  background-color: rgba(57, 144, 249, 0.135) ;
-  > h3 {
-    color: white;
-    margin-left: -235px;
-  }
-`;
-
-const NumberStyled = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 72px;
-  color: rgba(57, 144, 249, 0.135);
+const Title = styled.h1`
+  font-size: 36px;
   font-weight: bold;
-  z-index: 1;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: left;
+
+  @media (max-width: 834px) {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 24px;
+    text-align: center;
+  }
 `;
 
-const TextContainerStyled = styled.div`
-  width: 207px;
-  height: 99px;
-  color: white;
-  left: 20px;
-  position: relative;
-  padding: 10px;
-  font-size: 16px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  white-space: normal;
-  z-index: 2;
-  overflow: auto;
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+const DivContainerWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @media (max-width: 834px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 375px) {
+    grid-template-columns: 1fr;
+  }
 `;
+
+const Card = styled.div`
+  background: #3990F922;
+  color: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  height: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgb(255, 255, 255);
+  }
+
+  > h1 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+
+    @media (max-width: 834px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 14px;
+    }
+  }
+
+  &:hover > h1 {
+    color: #4a90e2;
+  }
+
+  > p {
+    width: 207px;
+    height: 120px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+    text-align: left;
+    overflow-y: auto; 
+    padding-right: 5px; 
+
+    @media (max-width: 834px) {
+      font-size: 12px;
+      width: 100%;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 10px;
+      width: 100%;
+    }
+  }
+
+  > div {
+    position: absolute;
+    font-size: 180px;
+    font-weight: bold;
+    color: rgba(74, 144, 226, 0.2); 
+    bottom: -35px;
+    right: 10px;
+    transition: color 0.3s ease;
+
+    @media (max-width: 834px) {
+      font-size: 140px;
+      bottom: -25px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 100px;
+      bottom: -25px;
+    }
+  }
+
+  &:hover > div {
+    color: rgba(74, 144, 226, 0.4);
+  }
+`;
+
+export default DivContainer;
