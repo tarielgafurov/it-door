@@ -10,12 +10,12 @@ import { motion } from 'framer-motion';
 const Formats = () => {
   const formats = [
     { 
-      icon: <HiStatusOffline />, 
+      icon: <HiStatusOffline />,
       title: 'Оффлайн', 
       description: 'Посещение занятий в аудитории, общение с однокурсниками и возможность задать свои вопросы лично преподавателю' 
     },
     { 
-      icon: <HiStatusOnline />, 
+      icon: <HiStatusOnline />,
       title: 'Онлайн', 
       description: 'Онлайн-обучение идет параллельно с офлайн и можно не бояться затянуть учебу на неопределенный срок' 
     },
@@ -26,7 +26,7 @@ const Formats = () => {
       <motion.h1 initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}transition={{ duration: 0.5 }}>Форматы обучения</motion.h1>
       <MotherStyled>
         {formats.map((format, index) => (
-          <BrotherStyled as={motion.div} key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.2 }} >
+          <BrotherStyled as={motion.div} key={index} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: index * 0.2 }}>
             <SisterStyled>
               {format.icon}
               <span>{format.title}</span>
@@ -40,6 +40,7 @@ const Formats = () => {
 };
 
 export default Formats;
+
 
 const ParentStyled = styled.div`
   padding: 20px;
@@ -56,15 +57,44 @@ const ParentStyled = styled.div`
     align-items: flex-start;
     color: white;
   }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    padding: 10px;
+    > h1 {
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 834px) {
+    width: 100%;
+    padding: 15px;
+    height: auto;
+    > h1 {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
 `;
 
 const MotherStyled = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 20px;
+
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
+
+  @media (max-width: 834px) {
+    flex-direction: column;
+    gap: 15px;
+    margin: auto;
+  }
 `;
 
-const BrotherStyled = styled.div`
+const BrotherStyled = styled(motion.div)`
   border: none;
   border-radius: 16px;
   padding: 15px;
@@ -72,6 +102,24 @@ const BrotherStyled = styled.div`
   height: 193px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: rgba(57, 144, 249, 0.135);
+  transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: scale(1.1) rotate(1deg);
+    background-color: rgba(57, 144, 249, 0.25);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 375px) {
+    width: 80%;
+    padding: 8px;
+  }
+
+  @media (max-width: 834px) {
+    width: 80%;
+    height: 70px;
+    padding: 10px;
+  }
 `;
 
 const SisterStyled = styled.div`
@@ -84,6 +132,16 @@ const SisterStyled = styled.div`
   > span {
     font-weight: bold;
     color: white;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  @media (max-width: 834px) {
+    font-size: 14px;
+    gap: 10px;
   }
 `;
 
@@ -102,4 +160,12 @@ const BabyStyled = styled.span`
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   font-style: normal;
+
+  @media (max-width: 375px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 834px) {
+    font-size: 12px;
+  }
 `;
