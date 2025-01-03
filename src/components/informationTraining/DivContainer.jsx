@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 const DivContainer = () => {
   const data = [
-    { id: 1, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
-    { id: 2, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
-    { id: 3, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
-    { id: 4, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
-    { id: 5, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
-    { id: 6, title: 'Занятия', description: 'занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика' },
+    { id: 1, title: 'Занятия', description: 'Занятия проходят 6 раз в неделю 3 дня уроки 3 дня практика.' },
+    { id: 2, title: 'Занятия', description: 'Преподаватель объясняет теоретический материал (например, основы синтаксиса языка, работу алгоритмов).' },
+    { id: 3, title: 'Занятия', description: 'Занятие полностью посвящено работе над проектом.' },
+    { id: 4, title: 'Занятия', description: 'Учащиеся делятся на пары и работают над одним заданием, чередуясь в написании кода.	Это помогает развивать навыки работы в команде.' },
+    { id: 5, title: 'Занятия', description: 'Несколько занятий подряд посвящены разработке полноценных проектов (например, создание веб-приложения или игры).' },
+    { id: 6, title: 'Занятия', description: 'В рамках занятия участники делятся на команды и решают задачи в ограниченное время.	В конце сравниваются результаты, обсуждаются подходы и решения.' },
   ];
 
   return (
@@ -30,6 +30,8 @@ const DivContainer = () => {
 const Wrapper = styled.div`
   width: 1116px;
   margin: auto;
+  padding: 20px;
+  background-color: rgba(4, 17, 36, 1);
 
   @media (max-width: 834px) {
     width: 90%;
@@ -45,7 +47,6 @@ const Title = styled.h1`
   font-size: 36px;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 40px;
   text-align: left;
 
   @media (max-width: 834px) {
@@ -73,14 +74,14 @@ const DivContainerWrapper = styled.div`
   }
 `;
 
+
 const Card = styled.div`
   background: #3990F922;
   color: #ffffff;
   border-radius: 8px;
   position: relative;
-  overflow: hidden;
   padding: 20px;
-  height: 200px;
+  height: 180px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -101,7 +102,7 @@ const Card = styled.div`
     }
 
     @media (max-width: 375px) {
-      font-size: 14px;
+      font-size: 17px;
     }
   }
 
@@ -116,8 +117,29 @@ const Card = styled.div`
     line-height: 1.5;
     color: white;
     text-align: left;
-    overflow-y: auto; 
-    padding-right: 5px; 
+    overflow-y: auto;
+    padding-right: 5px;
+
+    ::-webkit-scrollbar {
+      width: 8px; 
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent; 
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(74, 144, 226, 0.6);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(74, 144, 226, 0.8); 
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(74, 144, 226, 0.6) transparent;
 
     @media (max-width: 834px) {
       font-size: 12px;
@@ -125,7 +147,7 @@ const Card = styled.div`
     }
 
     @media (max-width: 375px) {
-      font-size: 10px;
+      font-size: 14px;
       width: 100%;
     }
   }
@@ -133,8 +155,7 @@ const Card = styled.div`
   > div {
     position: absolute;
     font-size: 180px;
-    font-weight: bold;
-    color: rgba(74, 144, 226, 0.2); 
+    color: rgba(74, 144, 226, 0.2);
     bottom: -35px;
     right: 10px;
     transition: color 0.3s ease;
@@ -146,7 +167,7 @@ const Card = styled.div`
 
     @media (max-width: 375px) {
       font-size: 100px;
-      bottom: -25px;
+      bottom: -20px;
     }
   }
 
@@ -154,5 +175,6 @@ const Card = styled.div`
     color: rgba(74, 144, 226, 0.4);
   }
 `;
+
 
 export default DivContainer;
