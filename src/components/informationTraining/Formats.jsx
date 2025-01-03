@@ -48,7 +48,6 @@ const ParentStyled = styled.div`
   width: 1110px;
   height: 280px;
   margin: 0 auto;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: rgba(4, 17, 36, 1);
   > h1 {
     font-size: 28px;
@@ -99,7 +98,6 @@ const BrotherStyled = styled(motion.div)`
   padding: 15px;
   width: 540px;
   height: 123px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: rgba(57, 144, 249, 0.135);
   transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
   display: flex;
@@ -110,7 +108,7 @@ const BrotherStyled = styled(motion.div)`
   &:hover {
     transform: scale(1.1) rotate(1deg);
     background-color: rgba(57, 144, 249, 0.25);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: rgba(255, 255, 255, 0.86) 0px 5px 15px;
   }
 
   @media (max-width: 375px) {
