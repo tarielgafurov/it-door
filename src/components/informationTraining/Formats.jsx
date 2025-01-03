@@ -49,10 +49,9 @@ const ParentStyled = styled.div`
   height: 280px;
   margin: 0 auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(4, 17, 36, 1);
   > h1 {
     font-size: 28px;
-    margin-bottom: 25px;
-    margin-block-start: auto;
     display: flex;
     align-items: flex-start;
     color: white;
@@ -99,10 +98,14 @@ const BrotherStyled = styled(motion.div)`
   border-radius: 16px;
   padding: 15px;
   width: 540px;
-  height: 193px;
+  height: 123px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: rgba(57, 144, 249, 0.135);
   transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
 
   &:hover {
     transform: scale(1.1) rotate(1deg);
@@ -111,13 +114,14 @@ const BrotherStyled = styled(motion.div)`
   }
 
   @media (max-width: 375px) {
-    width: 80%;
-    padding: 8px;
+    width: 70%;
+    height: 90px;
+    padding-bottom: 10px;
   }
 
   @media (max-width: 834px) {
-    width: 80%;
-    height: 70px;
+    width: 70%;
+    height: 90px;
     padding: 10px;
   }
 `;
