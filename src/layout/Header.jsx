@@ -2,20 +2,26 @@ import styled from "styled-components"
 import itdoor from "..//assets/icons/it-door.png"
 import ButtonUI from "../components/UI/Button"
 import SelectUi from "./Select"
+import { GiHamburgerMenu } from "react-icons/gi";
 
 
 const Header = () =>{
     return(
         <HeaderStyled>
             <ImgStyled>
-            <img src={itdoor} alt="" />
-            <span>Курсы</span>
-            <span>Менторы</span>
-            <span>О Нас</span>
-            <span>Контакты</span>
+                <img src={itdoor} alt="" />
+            <KursInformationStyled>
+                <span>Курсы</span>
+                <span>Менторы</span>
+                <span>О Нас</span>
+                <span>Контакты</span>
+            </KursInformationStyled>
             </ImgStyled>
-            <ButtonUI>Войти</ButtonUI>
-            <SelectUi/>
+            <ButtonStyled>
+                <ButtonUI>Войти</ButtonUI>
+                <SelectUi/>
+            </ButtonStyled>
+                <BurgerMenuStyled />
         </HeaderStyled>
     )
 }
@@ -32,10 +38,27 @@ const HeaderStyled = styled.header`
     justify-content: space-around;
     background-color: rgba(4, 17, 36, 1);
     color: white;
+    
+    @media(max-width: 375px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 97px;
+    }
+
+    @media(min-width: 376px) and (max-width: 834px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 97px;
+
+    }
 `
 
-const ImgStyled = styled.div`
-    width: 648px;
+const KursInformationStyled = styled.div`
+    width: 377px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,21 +73,74 @@ const ImgStyled = styled.div`
         }
     }
 
-`
-
-const BtnStyled = styled.div`
-
-    >button{
-        padding: 5px 45px 5px 41.5px;
-        background-color: #2185D9;
-        font-size: 17px;
-        border-radius: 4px;
-        border: none;
-        color: white;
-        line-height: 20.53px;
-
-        &:hover{
-            background-color: blue;
+    @media(max-width: 375px) {
+        display: none;
+    }
+    @media(min-width: 376px) and (max-width: 834px) {
+        >span{
+            font-size: 16px;
         }
     }
+
+
+`
+
+const ImgStyled = styled.div`
+    width: 648px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media(max-width: 375px) {
+        width: 230px;
+        >img{
+            width: 67px;
+            height: 22px;
+        }
+    }
+
+    @media(min-width: 376px) and (max-width: 834px) {
+        >img{
+            width: 100px;
+        }
+    }
+
+
+`
+
+
+const BurgerMenuStyled = styled(GiHamburgerMenu)`
+    display: none;
+
+    
+    @media(max-width: 375px) {
+        width: 30px;
+        display: block;
+        &:hover{
+            border: 1px solid white;
+            width: 30px;
+        }
+    }
+
+    @media(min-width: 376px) and (max-width: 834px) {
+        display: none;
+   }
+
+`
+
+
+const ButtonStyled = styled.div`
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media(max-width: 375px) {
+        display: none;
+    }
+
+    @media(min-width: 376px) and (max-width: 834px) {
+        display: none;
+    }
+
 `

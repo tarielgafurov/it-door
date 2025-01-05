@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from '@mui/material/Button';
+import { media } from '../../hooks/media/media';
 
 const ButtonUI = ({ onClick , ...props}) => {
   return (
@@ -31,4 +32,8 @@ const ButtonStyled = styled(Button)`
   width: ${(props) => props.width || 'auto'};
   height: ${(props) => props.height || 'auto'};
   color: ${(props) => props.color || '#fff'};
+
+  @media(max-width: 375px) {
+    display: none;
+  }
 `

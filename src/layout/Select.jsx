@@ -2,6 +2,7 @@ import Select from '@mui/material/Select';
 import { useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import styled from 'styled-components';
+import { media } from '../hooks/media/media';
 
 const SelectUi = (props) =>{
   const [selectedLanguage, setSelectedLanguage] = useState('')
@@ -31,6 +32,11 @@ const SelectStyled = styled(Select)`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+
+  ${media.mobile(`
+      display: none;
+  `)}
+
 `
 
 
