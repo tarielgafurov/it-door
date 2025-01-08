@@ -47,8 +47,6 @@ const StartCore = styled.div`
   border-radius: 30px;
   background-color: #041124;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  margin: auto;
-  margin-top: 50px;
   > img {
     margin-top: 60px;
   }
